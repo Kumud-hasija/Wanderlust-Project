@@ -1,0 +1,71 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+  <div class="col-8 offset-2">
+  <body>
+    <br>
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+      <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input name="listing[title]" class="form-control" placeholder="add a catchy title" type="text" required/>
+    </div>
+    <div class="valid-feedback">
+      title looks good !
+    </div>
+    <div class="invalid-feedback">
+      title should be valid 
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        name="listing[description]"
+        class="form-control" required
+      ></textarea>
+    </div>
+    <div class="valid-feedback">
+      description looks good !
+    </div>
+    <div class="invalid-feedback">
+      description should be valid 
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image Link</label>
+      <input name="listing[image]" placeholder="enter image URL/Link" class="form-control" type="text"/>
+    </div>
+      
+    <div class="row">
+    <div class="mb-3 col-md-4 ">
+      <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" placeholder="1200" class="form-control"  required/>
+    </div>
+    <div class="invalid-feedback">
+      price should be valid 
+    </div>
+
+    <div class="mb-3 col-md-8">
+      <label for="country" class="form-label">Country</label>
+      <input name="listing[country]" placeholder="India" class="form-control" type="text" required/>
+    </div>
+  </div>
+    <div class="invalid-feedback">
+      country should be valid 
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input  name="listing[location]"  placeholder="Jaipur,Rajasthan"  class="form-control" type="text" required/>
+    </div>
+    <div class="invalid-feedback">
+      location should be valid 
+    </div>
+     
+    <br>
+      <button class="add-btn btn-dark">Add</button>
+      <br><br>
+    </form>
+  </body>
+</div>
+</div>
+
+
