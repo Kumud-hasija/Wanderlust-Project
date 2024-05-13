@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,6 +15,7 @@ const flash = require("connect-flash");
 const passport=require("passport");
 const localStrategy=require("passport-local");
 const User = require("./models/user.js");
+
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -66,9 +71,9 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi, I am root");
+// });
 
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
