@@ -1,9 +1,18 @@
 
+const express = require("express");
+const app = express();
 const Listing = require("./models/listing.js");
 const Review = require("./models/reviews.js");
 const { listingSchema, reviewSchema } = require("./schema.js");
 const ExpressError = require("./utils/ExpressError.js");
 
+app.use((req, res, next) => {
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
+    res.locals.currUser = req.user;
+    res.render('navbar', { currUser: req.user });
+    next();
+  });
 
 module.exports.isLoggedIn = async (req, res, next) => {
     if (!req.isAuthenticated()) {
