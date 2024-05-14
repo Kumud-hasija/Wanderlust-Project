@@ -13,21 +13,15 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
 }
 
-const initDB = async () => {
-  await Listing.deleteMany({});
-  initData.data = initData.data.map((obj)=>({
-    ...obj,
-    owner:"663fda9b0e16309005c358ad",
-  }));
-  const dataToInsert = initData.data.map(item => ({
-    ...item,
-    image: item.image.url
-  }));
-  await Listing.insertMany(dataToInsert);
-  console.log("data was initialized");
+
+const initDB = async() => {
+    await Listing.deleteMany({});
+    initData.data = initData.data.map((obj) => ({...obj, owner: "663fda9b0e16309005c358ad"}))
+    await Listing.insertMany(initData.data);
+    console.log("data was initialized");
 };
 
 
