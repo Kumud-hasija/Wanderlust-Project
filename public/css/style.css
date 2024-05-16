@@ -77,13 +77,14 @@ body{
 }
 
 .card-img-top{
-    border-radius: 1rem !important;
+    border-radius: 0.2rem !important;
     width:100% !important;
     object-fit: cover !important;
 }
 
 .card-body{
     padding: 0 !important;
+    margin: 1rem !important;
 }
 
 .card-txt p{

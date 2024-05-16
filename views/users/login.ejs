@@ -1,23 +1,25 @@
-<% layout('/layouts/boilerplate') %>
-<div class="col-6 offset-3"class="row mt-3">
-  <h1>Login on Wanderlust</h1>
+<% layout("/layouts/boilerplate.ejs") %>
 
-  <div class="col-6 offset-3">
-    <form action="/login" method="POST" class="needs-validation" novalidate>
-      <div class="mb-3 ">
-        <label for="username" class="form-label">Username</label>
-        <input name="username" class="form-control" placeholder="username" type="text" id="username" required/>      
-      </div>
-      <div class="valid-feedback">
-        Looks good !
-       </div>
-       <div class="invalid-feedback">
-         username should be valid 
-       </div>
-       <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input name="password" class="form-control" placeholder="password" type="password" id="password" required/>
+<div class="col-6 offset-3"class="row mt-3">
+    <h1>Login on Wanderlust</h1>
+    <div class="col-8 offset-2">
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input name="username" class="form-control" placeholder="username" type="text" id="username" required/>
+            </div>
+            <div class="valid-feedback">
+             Looks good !
+            </div>
+            <div class="invalid-feedback">
+              username should be valid 
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" class="form-control" placeholder="password" type="password" id="password" required/>
+            </div>
+            <button class="btn btn-success" >Login</button>
+        </form>
     </div>
-    <button class="btn btn-success" >Login</button>
-</form>
 </div>
